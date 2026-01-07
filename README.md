@@ -57,8 +57,8 @@ Para executar o projeto, você precisará do Android Studio na versão mais rece
 
 ## Informações Legais
 
-*   [Política de Privacidade](docs/PrivacyPolicy.md)
-*   [Termos de Serviço](docs/TermsOfService.md)
+*   [Política de Privacidade](PrivacyPolicy.md)
+*   [Termos de Serviço](TermsOfService.md)
 
 ## 📄 Licença
 
