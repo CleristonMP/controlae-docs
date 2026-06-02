@@ -1,6 +1,6 @@
 # Termos de Serviço do Controlaê
 
-**Última atualização:** 13 de abril de 2026
+**Última atualização:** 1 de junho de 2026
 
 Bem-vindo(a) ao Controlaê ("Aplicativo"). Ao baixar, instalar, acessar ou utilizar o Aplicativo, você concorda com estes Termos de Serviço. Se você não concordar com estes Termos, não utilize o Aplicativo.
 
@@ -8,7 +8,7 @@ Bem-vindo(a) ao Controlaê ("Aplicativo"). Ao baixar, instalar, acessar ou utili
 
 ## 1. Sobre o Aplicativo
 
-O Controlaê é um aplicativo de gerenciamento financeiro pessoal, voltado ao registro e acompanhamento de despesas, receitas, limites, cartões, relatórios e recursos relacionados a backup e restauração.
+O Controlaê é um aplicativo de gerenciamento financeiro pessoal, voltado ao registro e acompanhamento de despesas, receitas, limites, cartões, contas recorrentes, metas de economia, relatórios e recursos relacionados a backup e restauração.
 
 O Aplicativo é disponibilizado para uso pessoal e não comercial, salvo autorização expressa em contrário.
 
@@ -39,13 +39,14 @@ No entanto, o Aplicativo pode utilizar serviços de terceiros para viabilizar fu
 - autenticação com conta Google
 - backup e restauração com Google Drive
 - relatórios técnicos de falha via Firebase Crashlytics
+- captura opcional de notificações financeiras para sugestões de lançamento
 
 Você é responsável por:
 
 - revisar os dados inseridos no Aplicativo
 - manter a segurança do seu dispositivo
 - proteger sua conta Google, quando optar por utilizá-la no app
-- decidir se deseja usar os recursos de backup e restauração
+- decidir se deseja usar os recursos de backup, restauração, lembretes e captura opcional de notificações
 
 ---
 
@@ -59,8 +60,22 @@ Ao utilizar esse recurso, você reconhece que:
 - o funcionamento do backup pode depender de conexão com a internet, permissões da conta Google e disponibilidade dos serviços do Google
 - a restauração pode sobrescrever dados locais existentes, quando confirmada por você
 - no estado atual do Aplicativo, o conteúdo do backup não é criptografado ponta a ponta pelo Controlaê antes do envio
+- o backup pode incluir, quando existirem, agendamentos recorrentes, ocorrências pendentes, metas de economia e movimentos dessas metas
 
 Embora nos esforcemos para oferecer um recurso confiável, você reconhece que a responsabilidade final por verificar seus backups e por manter cópias importantes dos seus dados é sua.
+
+---
+
+## 5.1. Contas recorrentes, parcelamentos e metas de economia
+
+O Aplicativo pode oferecer recursos para:
+
+- criar agendamentos de despesas recorrentes
+- gerar e acompanhar parcelamentos
+- exibir contas próximas do vencimento
+- criar metas de economia, registrar aportes e resgates e arquivar metas concluídas ou encerradas
+
+Esses recursos existem para organização pessoal. Você continua sendo responsável por conferir os dados registrados, os vencimentos reais, os valores previstos e a forma como utiliza essas informações nas suas decisões.
 
 ---
 
@@ -81,6 +96,8 @@ O Aplicativo pode depender, parcial ou totalmente, de serviços de terceiros par
 - Google Sign-in / Firebase Authentication
 - Google Drive API
 - Firebase Crashlytics
+
+O Aplicativo também pode depender de permissões do Android e de recursos do sistema para funcionalidades opcionais, como notificações, captura de sugestões de transação e lembretes de contas a vencer.
 
 Não garantimos disponibilidade contínua, ausência de falhas ou manutenção ininterrupta desses serviços de terceiros.
 
