@@ -1,6 +1,6 @@
 # Política de Privacidade do Controlaê
 
-**Última atualização:** 13 de abril de 2026
+**Última atualização:** 1 de junho de 2026
 
 A sua privacidade é importante para nós. Esta Política de Privacidade descreve como o aplicativo Controlaê ("Aplicativo") trata as informações quando você utiliza seus recursos.
 
@@ -12,7 +12,7 @@ O Controlaê é um aplicativo de controle financeiro pessoal. Em regra, os dados
 
 O Aplicativo também oferece recursos opcionais que utilizam serviços de terceiros, como login com Google, backup/restauração com Google Drive e relatórios de falha via Firebase Crashlytics. Nesses casos, alguns dados podem ser processados por esses serviços exclusivamente para viabilizar tais funcionalidades.
 
-Nós não operamos um backend próprio para armazenar os seus dados financeiros.
+Nós não operamos um backend próprio para armazenar seus dados financeiros.
 
 ---
 
@@ -23,10 +23,12 @@ Nós não operamos um backend próprio para armazenar os seus dados financeiros.
 O Aplicativo armazena localmente, no seu dispositivo, informações como:
 
 - despesas e receitas
+- agendamentos de despesas recorrentes, parcelas futuras e ocorrências pendentes
+- metas de economia, valores alvo, prazos opcionais, aportes, resgates e observações informadas por você
 - categorias
 - formas de pagamento
 - cartões de crédito
-- limites mensais
+- limites mensais e orçamentos por categoria
 - preferências do aplicativo
 - configurações de notificações
 - preferências de backup automático
@@ -49,12 +51,14 @@ Esses dados são utilizados para autenticação e para exibição do perfil cone
 Se você optar por utilizar backup e restauração com Google Drive, o Aplicativo poderá enviar para a pasta privada do app no Google Drive um arquivo de backup contendo:
 
 - dados financeiros cadastrados no app
+- agendamentos recorrentes, ocorrências pendentes e preferências de lembrete de contas a vencer, quando existirem
+- metas de economia e seus movimentos, quando existirem
 - preferências e configurações do usuário
 - metadados técnicos do backup
 
 Atualmente, esse backup é enviado para a área privada `appDataFolder` do Google Drive. Essa área é oculta na interface comum do Drive e acessível apenas ao Aplicativo com a permissão concedida por você.
 
-**Importante:** no estado atual do Aplicativo, o conteúdo do backup não é criptografado pelo Controlaê antes do envio. O arquivo é transmitido usando conexões seguras, mas não constitui criptografia ponta a ponta implementada pelo app.
+**Importante:** no estado atual do Aplicativo, o conteúdo do backup não é criptografado pelo Controlaê antes do envio. O arquivo é transmitido usando conexões seguras, mas isso não constitui criptografia ponta a ponta implementada pelo app.
 
 ### 2.4. Dados técnicos de falha e diagnóstico
 
@@ -67,6 +71,14 @@ O Aplicativo utiliza Firebase Crashlytics para identificar falhas e melhorar a e
 
 Esses dados são usados para diagnóstico, correção de erros e melhoria da qualidade do Aplicativo.
 
+### 2.5. Dados de notificações financeiras (opcional)
+
+Se você ativar a captura de transações, o Aplicativo poderá analisar notificações dos apps financeiros escolhidos por você para criar sugestões de lançamento. Esse recurso é opcional, fica desativado por padrão e depende da permissão de acesso a notificações concedida nas configurações do Android.
+
+O processamento acontece localmente no dispositivo. O Controlaê não envia o texto bruto das notificações para servidores ou terceiros. Para montar a sugestão, o app pode armazenar dados extraídos, como valor, tipo provável da transação, direção provável, app de origem, horário, status da sugestão e um hash usado para evitar duplicidade.
+
+Por padrão, nenhuma sugestão vira despesa ou entrada automaticamente. Você precisa revisar, confirmar, editar ou descartar cada sugestão. Se uma automação opcional estiver habilitada em alguma build, ela dependerá de regras explícitas escolhidas por você e manterá opção para revisar e desfazer o lançamento criado. O recurso pode ser desativado a qualquer momento nas configurações do Aplicativo e nas configurações do Android.
+
 ---
 
 ## 3. Como usamos as informações
@@ -74,11 +86,15 @@ Esses dados são usados para diagnóstico, correção de erros e melhoria da qua
 As informações tratadas pelo Aplicativo são usadas para:
 
 - registrar e organizar suas finanças pessoais
+- acompanhar metas de economia, aportes, resgates e valores reservados definidos por você
+- gerar e acompanhar contas recorrentes, parcelas e vencimentos pendentes
 - personalizar sua experiência no app
 - autenticar sua conta Google, quando você escolher usar esse recurso
 - criar e restaurar backups no Google Drive, quando você escolher usar esse recurso
 - executar backups automáticos, se você ativar essa funcionalidade
 - enviar lembretes e notificações do aplicativo
+- enviar lembretes sobre contas recorrentes próximas do vencimento, quando você ativar esse recurso
+- criar sugestões de lançamento a partir de notificações financeiras, somente se você ativar esse recurso
 - monitorar falhas e melhorar estabilidade e segurança
 
 ---
@@ -109,6 +125,14 @@ O Aplicativo pode solicitar permissões como:
 - **Notificações (`POST_NOTIFICATIONS`)**
   - usada para lembretes diários
   - usada para notificações relacionadas a backup automático
+  - usada para lembretes de contas a vencer, quando você ativar esse recurso
+  - usada para avisar quando houver sugestões de transação pendentes, se o recurso estiver ativo
+
+- **Acesso a notificações (`Notification Listener`)**
+  - concedido manualmente nas configurações do Android
+  - usado apenas se você ativar a captura de transações
+  - usado para analisar notificações dos apps escolhidos por você
+  - pode ser revogado a qualquer momento nas configurações do Android
 
 O uso dessas permissões é restrito às funcionalidades correspondentes.
 
@@ -150,7 +174,7 @@ Como regra:
 - os backups remotos permanecem na sua área privada do Google Drive até serem substituídos ou removidos
 - os dados técnicos de falha podem ser retidos pelos serviços Firebase conforme as políticas desses serviços
 
-Você pode interromper o uso de login Google, backup automático e backup no Drive a qualquer momento nas configurações do Aplicativo.
+Você pode interromper o uso de login Google, backup automático, backup no Drive, captura de transações e lembretes de contas a vencer a qualquer momento nas configurações do Aplicativo. O acesso a notificações também pode ser revogado nas configurações do Android.
 
 ---
 
